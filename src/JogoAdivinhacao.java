@@ -17,24 +17,24 @@ public class JogoAdivinhacao {
 
         while(tentativas < 5) {
 
-            System.out.println("Digite um número entre 0 e 50: ");
+            System.out.println(tentativas + 1 +"ª jogada: Digite um número entre 0 e 50: ");
             numeroDigitado = leitor.nextInt();
             tentativas++;
 
             if (numeroDigitado == numeroGerado) {
-                System.out.println("Parabéns, acertou o número na " + tentativas +"º tentativa! :)");
+                System.out.println("Parabéns, acertou o número secreto na " + tentativas +"º jogada! :)");
                 break;
             } else if (numeroDigitado < numeroGerado) {
-                System.out.println("Errou, o número que você digitou é MENOR");
+                System.out.println("Errou, o número secreto é MAIOR" + "\n");
             } else {
-                System.out.println("Errou, o número que você digitou é MAIOR");
+                System.out.println("Errou, o número secreto é MENOR" + "\n");
             }
         }
 
         if (tentativas == 5 && numeroDigitado != numeroGerado) {
+            System.out.println("===  G A M E  O V E R  ===");
             System.out.println("Você teve " + tentativas + " chances para acertar mas não conseguiu");
             System.out.println("O número secreto era: [ " + numeroGerado + " ]");
-            System.out.println("===  G A M E  O V E R  ===");
         }
     }
 }
